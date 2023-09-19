@@ -41,7 +41,7 @@ function Shows() {
   };
   return (
     <>
-    <Navbar/>
+    <Navbar/><br></br>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {data.map((movie) => (
         <div
