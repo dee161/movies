@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 function Shows() {
   const [data, setData] = useState([]);
   const [newMovie, setNewMovie] = useState({ name: "", description: "" });
@@ -22,7 +24,7 @@ function Shows() {
     try {
       await axios.delete(`http://localhost:4000/moviedelete/${movieId}`);
       fetchData();
-      alert("movies Deleted"); // Refresh data after deletion
+      alert("movies Deleted"); 
     } catch (error) {
       console.error("Error deleting movie:", error);
     }
@@ -31,13 +33,15 @@ function Shows() {
   const handleInsert = async () => {
     try {
       await axios.post("http://localhost:4000/movie", newMovie);
-      setNewMovie({ name: "", description: "" }); // Clear the form
-      fetchData(); // Refresh data after insertion
+      setNewMovie({ name: "", description: "" }); 
+      fetchData(); 
     } catch (error) {
       console.error("Error inserting movie:", error);
     }
   };
   return (
+    <>
+    <Navbar/>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {data.map((movie) => (
         <div
@@ -74,6 +78,8 @@ function Shows() {
         </div>
       ))}
     </div>
+    <Footer/>
+    </>
   );
 }
 export default Shows;

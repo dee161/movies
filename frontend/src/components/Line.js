@@ -26,12 +26,12 @@ function Line() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/running"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
-                  Team
-                </a>
+                  other
+                </Link>
               </li>
               <li>
                 <a

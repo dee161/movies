@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
 
 const Register = () => {
@@ -20,21 +22,23 @@ const Register = () => {
       });
 
       if (response.ok) {
-        console.log("Registration successful");
+        alert("Registration successful");
       } else {
-        console.error("Registration failed");
+        alert("Registration failed");
       }
     } catch (error) {
       console.error("Error:", error);
     }
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
   return (
     <div>
+      <div>
+        <Navbar/>
+      </div>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="bg-white p-8 rounded shadow-md w-96">
           <h1 className="text-2xl font-semibold mb-4">Register</h1>
@@ -98,6 +102,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

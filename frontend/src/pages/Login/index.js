@@ -1,8 +1,11 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React from "react";
 const Login = () => {
   return (
     <div>
       {/* <header /> */}
+      <Navbar/>
       <div>
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
           <div className="bg-white p-8 rounded shadow-md w-96">
@@ -50,6 +53,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
